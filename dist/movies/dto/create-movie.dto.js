@@ -9,21 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppController = void 0;
-const common_1 = require("@nestjs/common");
-let AppController = class AppController {
-    home() {
-        return 'Welcom to My Movie Api';
-    }
-};
+exports.CreateMovieDto = void 0;
+const class_validator_1 = require("class-validator");
+class CreateMovieDto {
+}
 __decorate([
-    Get(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], AppController.prototype, "home", null);
-AppController = __decorate([
-    (0, common_1.Controller)('')
-], AppController);
-exports.AppController = AppController;
-//# sourceMappingURL=app.controller.js.map
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateMovieDto.prototype, "title", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], CreateMovieDto.prototype, "year", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)({ each: true }),
+    __metadata("design:type", Array)
+], CreateMovieDto.prototype, "genres", void 0);
+exports.CreateMovieDto = CreateMovieDto;
+//# sourceMappingURL=create-movie.dto.js.map

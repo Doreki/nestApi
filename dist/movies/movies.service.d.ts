@@ -1,13 +1,11 @@
-import { MoviesService } from './movies.service';
 import { Movie } from './entities/movie.entity';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
-export declare class MoviesController {
-    private readonly moviesService;
-    constructor(moviesService: MoviesService);
+export declare class MoviesService {
+    private movies;
     getAll(): Movie[];
     getOne(id: number): Movie;
+    deleteOne(id: number): void;
     create(movieData: CreateMovieDto): void;
-    remove(id: number): void;
-    patch(id: number, updateData: UpdateMovieDto): void;
+    update(id: number, updateData: UpdateMovieDto): void;
 }
